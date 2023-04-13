@@ -40,8 +40,8 @@ export const NavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home" className={activeLink ==='home'? 'active navbar-link' : 'navbar-link' } onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
-              <Nav.Link href="#link" className={activeLink ==='skills'? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Skills</Nav.Link>
-              <Nav.Link href="#projects" className={activeLink ==='projects'? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Project</Nav.Link>
+              <Nav.Link href="#skills" className={activeLink ==='skills'? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
+              <Nav.Link href="#project" className={activeLink ==='projects'? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('project')}>Project</Nav.Link>
              </Nav>
             <span className='navbar-text'>
                 <div className='social-icon'>
@@ -49,7 +49,7 @@ export const NavBar = () => {
                     <a href="https://www.facebook.com/sri.h.msd.7/"><img src ={navIcon2} alt=''/></a>
                     <a href="#https://twitter.com/SriharinarayanV?t=gAY8Hfkhba1qBdiVPLXtcg&s=09"><img src ={navIcon3} alt=''/></a>
                 </div>
-                <button className='vvd' onClick={()=>console.log("connect")}><span>Let's Connect</span></button> 
+                <button className='vvd' onClick={() => onUpdateActiveLink('connect')}><span>Let's Connect</span></button> 
            </span>
           </Navbar.Collapse>
         </Container>

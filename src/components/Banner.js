@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
@@ -10,8 +11,9 @@ export const Banner = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
+  //eslint-disable-next-line
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Student","Web Developer", "Programmer"];
+  const toRotate = [ "Web Developer", "Web Designer", "UI/UX Designer" ];
   const period = 2000;
 
   useEffect(() => {
@@ -20,6 +22,7 @@ export const Banner = () => {
     }, delta);
 
     return () => { clearInterval(ticker) };
+
   }, [text])
 
   const tick = () => {
@@ -54,12 +57,12 @@ export const Banner = () => {
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
-               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-               <span className="tagline">Welcome to my Portfolio</span>
-               <h1>{`Hi! I'm Sri Hari Narayan`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Programmer" ]'><span className="wrap">{text}</span></span></h1>                        <p>I am pursuing my Bachelor's Degree in Computer Science and Engineering in Velammal institute of Technology</p>
-               <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
-               </div>
-               }
+              <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                <span className="tagline">Welcome to my Portfolio</span>
+                <h1>{`Hi! I'm SriHariNarayan`} <span className="txt-rotate" dataperiod="1000" data-rotate='[ "Web Developer", "Programmer"]'><span className="wrap">{text}</span></span></h1>
+                  <p>.</p>
+                  <button onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+              </div>}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
